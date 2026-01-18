@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,12 +9,38 @@ export default function Contact() {
     company: '',
     message: '',
   });
+  const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // フォーム送信のロジックをここに実装
-    alert('お問い合わせありがとうございます。後ほどご連絡させていただきます。');
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setIsSending(true);
+    
+    try {
+      // EmailJSでメールを送信
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || '未入力',
+          message: formData.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+      );
+
+      if (result.status === 200) {
+        alert('お問い合わせありがとうございます。後ほどご連絡させていただきます。');
+        setFormData({ name: '', email: '', company: '', message: '' });
+      } else {
+        throw new Error('送信に失敗しました');
+      }
+    } catch (error) {
+      alert('送信中にエラーが発生しました。もう一度お試しください。');
+      console.error('Error:', error);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -102,9 +129,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors inline-flex items-center justify-center gap-2 group"
+                disabled={isSending}
+                className="w-full bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors inline-flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                送信する
+                {isSending ? '送信中...' : '送信する'}
                 <Send className="group-hover:translate-x-1 transition-transform" size={20} />
               </button>
             </form>
