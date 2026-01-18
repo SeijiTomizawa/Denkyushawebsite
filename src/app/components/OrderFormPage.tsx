@@ -1,6 +1,24 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Send, CheckCircle } from 'lucide-react';
+import { 
+  ArrowLeft, 
+  Send, 
+  CheckCircle, 
+  Building2, 
+  User, 
+  Mail, 
+  Phone, 
+  Briefcase, 
+  Target, 
+  Palette, 
+  FileText, 
+  Zap, 
+  DollarSign, 
+  Calendar, 
+  HelpCircle,
+  Shield,
+  Clock
+} from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { emailJsConfig } from '@/config/emailjs';
@@ -24,28 +42,29 @@ interface FormData {
 
 const industries = [
   '選択してください',
+  '小売業（商店・ショップ等）',
+  '飲食業（レストラン・カフェ等）',
+  '美容・サロン（美容室・エステ等）',
+  '医療・福祉（クリニック・介護施設等）',
+  '士業（税理士・弁護士・行政書士等）',
+  '協会・団体・NPO',
+  '建設業・工務店',
   '製造業',
-  '小売業',
-  '飲食業',
-  'IT・通信',
-  '医療・福祉',
-  '教育',
+  'IT・Web関連',
+  '教育・スクール',
   '不動産',
-  '建設業',
-  '美容・サロン',
-  'その他',
+  'その他のサービス業',
 ];
 
 const designImages = [
   '選択してください',
-  'モダン・洗練',
-  'シンプル・ミニマル',
-  'クラシック・伝統的',
-  'ポップ・カラフル',
-  'エレガント・高級感',
-  'ナチュラル・温かみ',
-  'テクノロジー・先進的',
-  'その他',
+  'シンプル・ミニマル（すっきりとした印象）',
+  'ナチュラル・温かみ（親しみやすい雰囲気）',
+  'モダン・洗練（都会的でスタイリッシュ）',
+  'クラシック・伝統的（信頼感・格式）',
+  'ポップ・カラフル（明るく元気な印象）',
+  'エレガント・高級感（上品で洗練された雰囲気）',
+  'まだ決まっていない（相談したい）',
 ];
 
 const pageOptions = [
@@ -75,13 +94,12 @@ const featureOptions = [
 
 const budgetRanges = [
   '選択してください',
-  '30万円以下',
+  '10万円〜30万円',
   '30万円〜50万円',
-  '50万円〜100万円',
-  '100万円〜200万円',
-  '200万円〜500万円',
-  '500万円以上',
-  '未定・相談したい',
+  '50万円〜80万円',
+  '80万円〜100万円',
+  '100万円以上',
+  '予算未定・相談したい',
 ];
 
 export default function OrderFormPage() {
@@ -208,28 +226,44 @@ export default function OrderFormPage() {
         </Link>
 
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          <div className="mb-8">
+          <div className="mb-10">
             <h1 className="text-4xl mb-4 text-gray-900">WEB制作 お申し込みフォーム</h1>
-            <p className="text-lg text-gray-600">
-              お客様のご要望を詳しくお聞かせください。より正確なお見積もりとご提案をさせていただきます。
+            <p className="text-lg text-gray-600 mb-6">
+              お客様のご要望を詳しくお聞かせください。<br />
+              より正確なお見積もりとご提案をさせていただきます。
             </p>
+            
+            {/* 安心メッセージ */}
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 flex items-start gap-3">
+              <Shield className="text-yellow-600 flex-shrink-0 mt-0.5" size={20} />
+              <div className="text-sm text-gray-700">
+                <p className="mb-1"><span className="font-semibold">初めてのお客様も安心してください。</span></p>
+                <p>まずはご要望をお聞かせいただき、無料でお見積もりをご提案いたします。お気軽にご相談ください。</p>
+              </div>
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
             {/* 基本情報 */}
-            <div className="space-y-6">
-              <h2 className="text-2xl text-gray-900 border-b-2 border-yellow-500 pb-2">基本情報</h2>
+            <section className="bg-gray-50 rounded-xl p-6 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+                  <Building2 className="text-white" size={20} />
+                </div>
+                <h2 className="text-2xl text-gray-900">基本情報</h2>
+              </div>
               
               <div>
-                <label htmlFor="companyName" className="block text-sm mb-2 text-gray-700">
+                <label htmlFor="companyName" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  <Building2 size={16} />
                   会社名・屋号 <span className="text-red-500">*</span>
                 </label>
                 <input
-                  {...register('companyName', { required: '会社名は必須です' })}
+                  {...register('companyName', { required: '会社名・屋号を入力してください' })}
                   type="text"
                   id="companyName"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
-                  placeholder="株式会社〇〇"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
+                  placeholder="例：株式会社〇〇、〇〇商店、〇〇協会"
                 />
                 {errors.companyName && (
                   <p className="mt-1 text-sm text-red-500">{errors.companyName.message}</p>
@@ -237,15 +271,16 @@ export default function OrderFormPage() {
               </div>
 
               <div>
-                <label htmlFor="personName" className="block text-sm mb-2 text-gray-700">
+                <label htmlFor="personName" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  <User size={16} />
                   ご担当者名 <span className="text-red-500">*</span>
                 </label>
                 <input
-                  {...register('personName', { required: 'ご担当者名は必須です' })}
+                  {...register('personName', { required: 'ご担当者名を入力してください' })}
                   type="text"
                   id="personName"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
-                  placeholder="山田 太郎"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
+                  placeholder="例：山田 太郎"
                 />
                 {errors.personName && (
                   <p className="mt-1 text-sm text-red-500">{errors.personName.message}</p>
@@ -254,12 +289,13 @@ export default function OrderFormPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-sm mb-2 text-gray-700">
+                  <label htmlFor="email" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                    <Mail size={16} />
                     メールアドレス <span className="text-red-500">*</span>
                   </label>
                   <input
                     {...register('email', { 
-                      required: 'メールアドレスは必須です',
+                      required: 'メールアドレスを入力してください',
                       pattern: {
                         value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                         message: '有効なメールアドレスを入力してください'
@@ -267,7 +303,7 @@ export default function OrderFormPage() {
                     })}
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
                     placeholder="example@email.com"
                   />
                   {errors.email && (
@@ -276,14 +312,15 @@ export default function OrderFormPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm mb-2 text-gray-700">
+                  <label htmlFor="phone" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                    <Phone size={16} />
                     電話番号 <span className="text-red-500">*</span>
                   </label>
                   <input
-                    {...register('phone', { required: '電話番号は必須です' })}
+                    {...register('phone', { required: '電話番号を入力してください' })}
                     type="tel"
                     id="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
                     placeholder="03-1234-5678"
                   />
                   {errors.phone && (
@@ -291,20 +328,29 @@ export default function OrderFormPage() {
                   )}
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* サイト情報 */}
-            <div className="space-y-6">
-              <h2 className="text-2xl text-gray-900 border-b-2 border-yellow-500 pb-2">サイト情報</h2>
+            <section className="bg-gray-50 rounded-xl p-6 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+                  <Target className="text-white" size={20} />
+                </div>
+                <h2 className="text-2xl text-gray-900">サイト情報</h2>
+              </div>
 
               <div>
-                <label htmlFor="industry" className="block text-sm mb-2 text-gray-700">
+                <label htmlFor="industry" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  <Briefcase size={16} />
                   業種 <span className="text-red-500">*</span>
                 </label>
                 <select
-                  {...register('industry', { required: '業種を選択してください' })}
+                  {...register('industry', { 
+                    required: '業種を選択してください',
+                    validate: (value) => value !== '選択してください' || '業種を選択してください'
+                  })}
                   id="industry"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
                 >
                   {industries.map((industry) => (
                     <option key={industry} value={industry}>
@@ -318,15 +364,19 @@ export default function OrderFormPage() {
               </div>
 
               <div>
-                <label htmlFor="purpose" className="block text-sm mb-2 text-gray-700">
+                <label htmlFor="purpose" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  <Target size={16} />
                   サイトの目的 <span className="text-red-500">*</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  どのような目的でWebサイトを作りたいですか？
+                </div>
                 <textarea
                   {...register('purpose', { required: 'サイトの目的を入力してください' })}
                   id="purpose"
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors resize-none"
-                  placeholder="例：新規顧客の獲得、既存顧客への情報提供、採用活動の強化など"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all resize-none"
+                  placeholder="例：新規のお客様を増やしたい、サービス内容を詳しく伝えたい、会社の信頼性を高めたい、など"
                 />
                 {errors.purpose && (
                   <p className="mt-1 text-sm text-red-500">{errors.purpose.message}</p>
@@ -334,13 +384,20 @@ export default function OrderFormPage() {
               </div>
 
               <div>
-                <label htmlFor="designImage" className="block text-sm mb-2 text-gray-700">
+                <label htmlFor="designImage" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  <Palette size={16} />
                   デザインイメージ <span className="text-red-500">*</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  どんな雰囲気のデザインがお好みですか？
+                </div>
                 <select
-                  {...register('designImage', { required: 'デザインイメージを選択してください' })}
+                  {...register('designImage', { 
+                    required: 'デザインイメージを選択してください',
+                    validate: (value) => value !== '選択してください' || 'デザインイメージを選択してください'
+                  })}
                   id="designImage"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
                 >
                   {designImages.map((image) => (
                     <option key={image} value={image}>
@@ -352,24 +409,36 @@ export default function OrderFormPage() {
                   <p className="mt-1 text-sm text-red-500">{errors.designImage.message}</p>
                 )}
               </div>
-            </div>
+            </section>
 
             {/* ページ構成 */}
-            <div className="space-y-6">
-              <h2 className="text-2xl text-gray-900 border-b-2 border-yellow-500 pb-2">ページ構成</h2>
+            <section className="bg-gray-50 rounded-xl p-6 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+                  <FileText className="text-white" size={20} />
+                </div>
+                <h2 className="text-2xl text-gray-900">ページ構成</h2>
+              </div>
 
               <div>
-                <label className="block text-sm mb-3 text-gray-700">
+                <label className="flex items-center gap-2 text-sm mb-3 text-gray-700 font-medium">
+                  <FileText size={16} />
                   必要なページ <span className="text-red-500">*</span>
-                  <span className="text-sm text-gray-500 ml-2">（複数選択可）</span>
+                  <span className="text-sm text-gray-500 font-normal ml-2">（複数選択可）</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  サイトに必要なページを選択してください
+                </div>
                 <div className="grid md:grid-cols-2 gap-3">
                   {pageOptions.map((page) => (
-                    <label key={page.value} className="flex items-center gap-2 cursor-pointer">
+                    <label 
+                      key={page.value} 
+                      className="flex items-center gap-2 cursor-pointer bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-yellow-500 hover:bg-yellow-50 transition-all"
+                    >
                       <input
                         {...register('pages', { required: '少なくとも1つのページを選択してください' })}
                         type="checkbox"
-                        value={page.value}
+                        value={page.label}
                         className="w-5 h-5 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500"
                       />
                       <span className="text-gray-700">{page.label}</span>
@@ -377,40 +446,51 @@ export default function OrderFormPage() {
                   ))}
                 </div>
                 {errors.pages && (
-                  <p className="mt-1 text-sm text-red-500">{errors.pages.message}</p>
+                  <p className="mt-2 text-sm text-red-500">{errors.pages.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="pageCount" className="block text-sm mb-2 text-gray-700">
-                  概算ページ数
+                <label htmlFor="pageCount" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  概算ページ数 <span className="text-gray-500 text-xs font-normal">（任意）</span>
                 </label>
                 <input
                   {...register('pageCount')}
                   type="text"
                   id="pageCount"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
-                  placeholder="例：約10ページ"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
+                  placeholder="例：約10ページ、5〜8ページ程度"
                 />
               </div>
-            </div>
+            </section>
 
             {/* 機能要件 */}
-            <div className="space-y-6">
-              <h2 className="text-2xl text-gray-900 border-b-2 border-yellow-500 pb-2">機能要件</h2>
+            <section className="bg-gray-50 rounded-xl p-6 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+                  <Zap className="text-white" size={20} />
+                </div>
+                <h2 className="text-2xl text-gray-900">機能要件</h2>
+              </div>
 
               <div>
-                <label className="block text-sm mb-3 text-gray-700">
-                  必要な機能
-                  <span className="text-sm text-gray-500 ml-2">（複数選択可）</span>
+                <label className="flex items-center gap-2 text-sm mb-3 text-gray-700 font-medium">
+                  <Zap size={16} />
+                  必要な機能 <span className="text-gray-500 text-xs font-normal">（任意・複数選択可）</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  サイトに追加したい機能があれば選択してください
+                </div>
                 <div className="grid md:grid-cols-2 gap-3">
                   {featureOptions.map((feature) => (
-                    <label key={feature.value} className="flex items-center gap-2 cursor-pointer">
+                    <label 
+                      key={feature.value} 
+                      className="flex items-center gap-2 cursor-pointer bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-yellow-500 hover:bg-yellow-50 transition-all"
+                    >
                       <input
                         {...register('features')}
                         type="checkbox"
-                        value={feature.value}
+                        value={feature.label}
                         className="w-5 h-5 text-yellow-600 border-gray-300 rounded focus:ring-yellow-500"
                       />
                       <span className="text-gray-700">{feature.label}</span>
@@ -418,20 +498,32 @@ export default function OrderFormPage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* 予算・スケジュール */}
-            <div className="space-y-6">
-              <h2 className="text-2xl text-gray-900 border-b-2 border-yellow-500 pb-2">予算・スケジュール</h2>
+            <section className="bg-gray-50 rounded-xl p-6 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+                  <DollarSign className="text-white" size={20} />
+                </div>
+                <h2 className="text-2xl text-gray-900">予算・スケジュール</h2>
+              </div>
 
               <div>
-                <label htmlFor="budget" className="block text-sm mb-2 text-gray-700">
+                <label htmlFor="budget" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  <DollarSign size={16} />
                   ご予算 <span className="text-red-500">*</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  おおよそのご予算をお選びください（後から変更可能です）
+                </div>
                 <select
-                  {...register('budget', { required: 'ご予算を選択してください' })}
+                  {...register('budget', { 
+                    required: 'ご予算を選択してください',
+                    validate: (value) => value !== '選択してください' || 'ご予算を選択してください'
+                  })}
                   id="budget"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
                 >
                   {budgetRanges.map((range) => (
                     <option key={range} value={range}>
@@ -445,66 +537,94 @@ export default function OrderFormPage() {
               </div>
 
               <div>
-                <label htmlFor="deadline" className="block text-sm mb-2 text-gray-700">
-                  希望納期
+                <label htmlFor="deadline" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  <Calendar size={16} />
+                  希望納期 <span className="text-gray-500 text-xs font-normal">（任意）</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  いつ頃までにサイトを公開したいですか？
+                </div>
                 <input
                   {...register('deadline')}
                   type="text"
                   id="deadline"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors"
-                  placeholder="例：2024年6月末、できるだけ早く、など"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
+                  placeholder="例：3ヶ月以内、2026年6月末まで、急ぎではない、など"
                 />
+                <p className="mt-2 text-xs text-gray-500 flex items-center gap-1">
+                  <Clock size={14} />
+                  通常、5〜10ページのサイトで1〜2ヶ月程度です
+                </p>
               </div>
-            </div>
+            </section>
 
             {/* その他 */}
-            <div className="space-y-6">
-              <h2 className="text-2xl text-gray-900 border-b-2 border-yellow-500 pb-2">その他</h2>
+            <section className="bg-gray-50 rounded-xl p-6 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-yellow-600 rounded-lg flex items-center justify-center">
+                  <HelpCircle className="text-white" size={20} />
+                </div>
+                <h2 className="text-2xl text-gray-900">その他</h2>
+              </div>
 
               <div>
-                <label htmlFor="referenceUrls" className="block text-sm mb-2 text-gray-700">
-                  参考サイト（URL）
+                <label htmlFor="referenceUrls" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  参考サイト（URL） <span className="text-gray-500 text-xs font-normal">（任意）</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  「こんなサイトにしたい」という参考サイトがあればURLを教えてください
+                </div>
                 <textarea
                   {...register('referenceUrls')}
                   id="referenceUrls"
                   rows={3}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors resize-none"
-                  placeholder="参考にしたいサイトのURLを記入してください（複数可）"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all resize-none"
+                  placeholder="https://example.com&#10;https://sample.jp&#10;など、複数のURLを改行して入力できます"
                 />
               </div>
 
               <div>
-                <label htmlFor="otherRequests" className="block text-sm mb-2 text-gray-700">
-                  その他ご要望・ご質問
+                <label htmlFor="otherRequests" className="flex items-center gap-2 text-sm mb-2 text-gray-700 font-medium">
+                  その他ご要望・ご質問 <span className="text-gray-500 text-xs font-normal">（任意）</span>
                 </label>
+                <div className="mb-2 text-xs text-gray-500">
+                  その他、ご不明な点やご要望があれば何でもお書きください
+                </div>
                 <textarea
                   {...register('otherRequests')}
                   id="otherRequests"
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-600 transition-colors resize-none"
-                  placeholder="その他、ご要望やご質問がありましたらご記入ください"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all resize-none"
+                  placeholder="例：&#10;・ロゴデザインも一緒にお願いしたい&#10;・写真撮影も依頼できますか？&#10;・見積もりだけ先に知りたい&#10;・まだ迷っているので相談だけでも大丈夫ですか？&#10;など、お気軽にお書きください"
                 />
               </div>
-            </div>
+            </section>
 
             {/* 送信ボタン */}
             <div className="pt-6">
               <button
                 type="submit"
                 disabled={isSending}
-                className="w-full bg-yellow-600 text-white px-8 py-4 rounded-lg hover:bg-yellow-700 transition-colors inline-flex items-center justify-center gap-2 text-lg font-semibold group disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-yellow-600 text-white px-8 py-5 rounded-xl hover:bg-yellow-700 transition-all inline-flex items-center justify-center gap-3 text-lg font-semibold group disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
               >
-                {isSending ? '送信中...' : (
+                {isSending ? (
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    送信中...
+                  </>
+                ) : (
                   <>
                     <Send className="group-hover:translate-x-1 transition-transform" size={24} />
-                    お申し込み内容を送信
+                    お申し込み内容を送信する
                   </>
                 )}
               </button>
-              <p className="mt-4 text-sm text-gray-600 text-center">
+              <p className="mt-4 text-sm text-gray-600 text-center flex items-center justify-center gap-2">
+                <Shield size={16} className="text-yellow-600" />
                 送信後、3営業日以内にご連絡させていただきます
+              </p>
+              <p className="mt-2 text-xs text-gray-500 text-center">
+                まずは無料でお見積もりをご提案いたします。お気軽にお申し込みください。
               </p>
             </div>
           </form>
