@@ -1,11 +1,13 @@
-import { Lightbulb, ChevronDown } from 'lucide-react';
+import { Lightbulb, ChevronDown, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Header() {
   const location = useLocation();
   const [isStudyMenuOpen, setIsStudyMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (id: string) => {
     // ホームページにいない場合は、まずホームに戻る
@@ -23,33 +25,37 @@ export default function Header() {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsStudyMenuOpen(false);
       }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
     };
 
-    if (isStudyMenuOpen) {
+    if (isStudyMenuOpen || isMobileMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isStudyMenuOpen]);
+  }, [isStudyMenuOpen, isMobileMenuOpen]);
 
   return (
     <header className="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-200">
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-4 md:px-6 py-3 md:py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 md:gap-3">
             <div className="relative">
-              <Lightbulb className="text-yellow-500 w-8 h-8" fill="currentColor" />
+              <Lightbulb className="text-yellow-500 w-6 h-6 md:w-8 md:h-8" fill="currentColor" />
               <div className="absolute inset-0 blur-xl bg-yellow-400 opacity-30 animate-pulse" />
             </div>
-            <div className="text-2xl font-bold text-gray-900">
-              電究社 <small>- DENKYUSHA -</small>
+            <div className="text-lg md:text-2xl font-bold text-gray-900">
+              電究社 <small className="hidden sm:inline">- DENKYUSHA -</small>
             </div>
           </Link>
 
-          {/* Navigation Menu */}
-          <div className="flex items-center gap-8">
+          {/* Desktop Navigation Menu */}
+          <div className="hidden lg:flex items-center gap-8">
             <Link to="/service" className="text-gray-700 hover:text-gray-900 transition-colors">
               SERVICE
             </Link>
@@ -84,6 +90,7 @@ export default function Header() {
                 <div className="py-2">
                   <Link
                     to="/study"
+                    onClick={() => setIsStudyMenuOpen(false)}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
                   >
                     STUDY TOP
@@ -96,150 +103,175 @@ export default function Header() {
                     <div className="text-xs text-gray-500 font-semibold mb-1">Frontend</div>
                     <Link
                       to="/study/html"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
                     >
                       HTML
                     </Link>
                     <Link
                       to="/study/html/basic-syntax"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       基本構文
                     </Link>
                     <Link
                       to="/study/html/lists-links"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       リストとリンク
                     </Link>
                     <Link
                       to="/study/html/media"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       画像とメディア
                     </Link>
                     <Link
                       to="/study/html/tables"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       テーブル
                     </Link>
                     <Link
                       to="/study/html/forms"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       フォーム
                     </Link>
                     <Link
                       to="/study/html/semantic"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       セマンティックHTML
                     </Link>
                     <Link
                       to="/study/css"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
                     >
                       CSS
                     </Link>
                     <Link
                       to="/study/css/basic-syntax"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       基本構文
                     </Link>
                     <Link
                       to="/study/css/external-files"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       外部ファイル化
                     </Link>
                     <Link
                       to="/study/css/modern-css"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       モダンCSS
                     </Link>
                     <Link
                       to="/study/css/tailwind"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       Tailwind CSS
                     </Link>
                     <Link
                       to="/study/css/vanilla-extract"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       vanilla-extract
                     </Link>
                     <Link
                       to="/study/javascript"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
                     >
                       JavaScript/TypeScript
                     </Link>
                     <Link
                       to="/study/javascript/basic-syntax"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       基本構文
                     </Link>
                     <Link
                       to="/study/javascript/functions"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       関数
                     </Link>
                     <Link
                       to="/study/javascript/dom"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       DOM操作
                     </Link>
                     <Link
                       to="/study/javascript/async"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       非同期処理
                     </Link>
                     <Link
                       to="/study/javascript/typescript"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       TypeScript
                     </Link>
                     <Link
                       to="/study/javascript/modern-js"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       モダンJavaScript
                     </Link>
                     <Link
                       to="/study/react"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
                     >
                       React
                     </Link>
                     <Link
                       to="/study/react/components"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       コンポーネント
                     </Link>
                     <Link
                       to="/study/react/hooks"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       Hooks
                     </Link>
                     <Link
                       to="/study/react/lifecycle"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       ライフサイクル
                     </Link>
                     <Link
                       to="/study/react/jsx"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       JSX
@@ -248,43 +280,47 @@ export default function Header() {
                   
                   <div className="border-t border-gray-200 my-2"></div>
                   
-                  {/* React Section - Removed since it's now in Frontend */}
-                  
                   {/* PHP Section */}
                   <div className="px-4 py-1">
                     <div className="text-xs text-gray-500 font-semibold mb-1">PHP</div>
                     <Link
                       to="/study/php"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
                     >
                       PHP
                     </Link>
                     <Link
                       to="/study/php/basic-syntax"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       基本構文
                     </Link>
                     <Link
                       to="/study/php/web-application"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       Webアプリケーション
                     </Link>
                     <Link
                       to="/study/php/database-control"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       データベース制御
                     </Link>
                     <Link
                       to="/study/php/framework"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       フレームワーク
                     </Link>
                     <Link
                       to="/study/php/security"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-1.5 text-xs text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors ml-2"
                     >
                       セキュリティ
@@ -298,6 +334,7 @@ export default function Header() {
                     <div className="text-xs text-gray-500 font-semibold mb-1">MySQL</div>
                     <Link
                       to="/study/mysql"
+                      onClick={() => setIsStudyMenuOpen(false)}
                       className="block px-2 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded transition-colors"
                     >
                       MySQL
@@ -314,8 +351,176 @@ export default function Header() {
               お問い合わせ
             </button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2"
+            aria-label="メニュー"
+          >
+            {isMobileMenuOpen ? (
+              <X size={24} className="text-gray-700" />
+            ) : (
+              <Menu size={24} className="text-gray-700" />
+            )}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu Drawer */}
+      <div
+        ref={mobileMenuRef}
+        className={`fixed top-[60px] right-0 h-[calc(100vh-60px)] w-72 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 lg:hidden overflow-y-auto ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="p-4 space-y-2">
+          <Link
+            to="/service"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg transition-colors font-medium"
+          >
+            SERVICE
+          </Link>
+          <Link
+            to="/create"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg transition-colors font-medium"
+          >
+            CREATE
+          </Link>
+          
+          {/* STUDY Section in Mobile */}
+          <div className="border-t border-gray-200 pt-2">
+            <button
+              onClick={() => setIsStudyMenuOpen(!isStudyMenuOpen)}
+              className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg transition-colors font-medium"
+            >
+              STUDY
+              <ChevronDown 
+                size={16} 
+                className={`transition-transform duration-200 ${isStudyMenuOpen ? 'rotate-180' : ''}`} 
+              />
+            </button>
+            
+            {isStudyMenuOpen && (
+              <div className="mt-2 ml-2 space-y-1">
+                <Link
+                  to="/study"
+                  onClick={() => {
+                    setIsStudyMenuOpen(false);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  STUDY TOP
+                </Link>
+                
+                <div className="border-t border-gray-200 my-2"></div>
+                
+                {/* Frontend */}
+                <div className="px-2">
+                  <div className="text-xs text-gray-500 font-semibold mb-1 px-2">Frontend</div>
+                  <Link
+                    to="/study/html"
+                    onClick={() => {
+                      setIsStudyMenuOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    HTML
+                  </Link>
+                  <Link
+                    to="/study/css"
+                    onClick={() => {
+                      setIsStudyMenuOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    CSS
+                  </Link>
+                  <Link
+                    to="/study/javascript"
+                    onClick={() => {
+                      setIsStudyMenuOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    JavaScript/TypeScript
+                  </Link>
+                  <Link
+                    to="/study/react"
+                    onClick={() => {
+                      setIsStudyMenuOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    React
+                  </Link>
+                </div>
+                
+                <div className="border-t border-gray-200 my-2"></div>
+                
+                {/* PHP */}
+                <div className="px-2">
+                  <div className="text-xs text-gray-500 font-semibold mb-1 px-2">PHP</div>
+                  <Link
+                    to="/study/php"
+                    onClick={() => {
+                      setIsStudyMenuOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    PHP
+                  </Link>
+                </div>
+                
+                <div className="border-t border-gray-200 my-2"></div>
+                
+                {/* MySQL */}
+                <div className="px-2">
+                  <div className="text-xs text-gray-500 font-semibold mb-1 px-2">MySQL</div>
+                  <Link
+                    to="/study/mysql"
+                    onClick={() => {
+                      setIsStudyMenuOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    MySQL
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <div className="border-t border-gray-200 pt-2">
+            <button 
+              onClick={() => {
+                scrollToSection('contact');
+                setIsMobileMenuOpen(false);
+              }} 
+              className="w-full bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium"
+            >
+              お問い合わせ
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

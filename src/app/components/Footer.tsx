@@ -1,14 +1,19 @@
 import { Lightbulb } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="bg-gray-900 text-white py-12 px-6">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity">
               <div className="relative">
                 <Lightbulb
                   className="text-yellow-500 w-7 h-7"
@@ -19,7 +24,7 @@ export default function Footer() {
               <div className="text-2xl font-bold">
                 電究社 <small>- DENKYUSHA -</small>
               </div>
-            </div>
+            </Link>
             <p className="text-gray-400">
               あなたのビジネスをデジタルで明るく照らす、WEB制作のプロフェッショナル。
             </p>
@@ -28,20 +33,52 @@ export default function Footer() {
           <div>
             <h3 className="text-lg mb-4">サービス</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>WEBサイト制作</li>
-              <li>モバイルアプリ開発</li>
-              <li>UIデザイン</li>
-              <li>SEO対策</li>
+              <li>
+                <Link to="/create" className="hover:text-yellow-500 transition-colors">
+                  WEBサイト制作
+                </Link>
+              </li>
+              <li>
+                <Link to="/service" className="hover:text-yellow-500 transition-colors">
+                  WordPressヘッドレス化
+                </Link>
+              </li>
+              <li>
+                <Link to="/study" className="hover:text-yellow-500 transition-colors">
+                  プログラミング学習
+                </Link>
+              </li>
+              <li>
+                <Link to="/order" className="hover:text-yellow-500 transition-colors">
+                  お申し込み
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg mb-4">ページ</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>TOP</li>
-              <li>SERVICE</li>
-              <li>CREATE</li>
-              <li>STUDY</li>
+              <li>
+                <Link to="/" onClick={scrollToTop} className="hover:text-yellow-500 transition-colors">
+                  TOP
+                </Link>
+              </li>
+              <li>
+                <Link to="/service" className="hover:text-yellow-500 transition-colors">
+                  SERVICE
+                </Link>
+              </li>
+              <li>
+                <Link to="/create" className="hover:text-yellow-500 transition-colors">
+                  CREATE
+                </Link>
+              </li>
+              <li>
+                <Link to="/study" className="hover:text-yellow-500 transition-colors">
+                  STUDY
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
