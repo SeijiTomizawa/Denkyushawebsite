@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import { emailJsConfig } from '@/config/emailjs';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,35 +12,72 @@ export default function Contact() {
   });
   const [isSending, setIsSending] = useState(false);
 
+  // EmailJSの初期化
+  useEffect(() => {
+    if (emailJsConfig.publicKey) {
+      emailjs.init(emailJsConfig.publicKey);
+      console.log('EmailJS initialized successfully');
+    } else {
+      console.error('EmailJS Public Key is not set');
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
     
+    console.log('📧 フォーム送信開始');
+    console.log('送信データ:', formData);
+    
     try {
+      // 環境変数の確認
+      console.log('EmailJS設定:', {
+        serviceId: emailJsConfig.serviceId,
+        templateId: emailJsConfig.contactTemplateId,
+        publicKey: emailJsConfig.publicKey ? '設定済み' : '未設定'
+      });
+
+      if (!emailJsConfig.serviceId || !emailJsConfig.contactTemplateId) {
+        throw new Error('EmailJS configuration is missing');
+      }
+
+      // 送信するテンプレートパラメータ
+      const templateParams = {
+        form_type: 'お問い合わせ',
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || '未入力',
+        message: formData.message,
+      };
+
+      console.log('📤 EmailJS送信中...', templateParams);
+
       // EmailJSでメールを送信
       const result = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company || '未入力',
-          message: formData.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+        emailJsConfig.serviceId,
+        emailJsConfig.contactTemplateId,
+        templateParams
       );
 
+      console.log('✅ EmailJS送信結果:', result);
+
       if (result.status === 200) {
+        console.log('🎉 メール送信成功！');
         alert('お問い合わせありがとうございます。後ほどご連絡させていただきます。');
         setFormData({ name: '', email: '', company: '', message: '' });
       } else {
+        console.error('❌ 予期しないステータス:', result.status);
         throw new Error('送信に失敗しました');
       }
     } catch (error) {
+      console.error('❌ 送信エラー:', error);
+      if (error instanceof Error) {
+        console.error('エラーメッセージ:', error.message);
+      }
       alert('送信中にエラーが発生しました。もう一度お試しください。');
-      console.error('Error:', error);
     } finally {
       setIsSending(false);
+      console.log('📧 フォーム送信処理完了');
     }
   };
 

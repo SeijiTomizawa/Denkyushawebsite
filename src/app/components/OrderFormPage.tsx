@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Send, CheckCircle } from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
+import { emailJsConfig } from '@/config/emailjs';
 
 interface FormData {
   companyName: string;
@@ -84,13 +86,88 @@ const budgetRanges = [
 
 export default function OrderFormPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log('Form submitted:', data);
-    setIsSubmitted(true);
-    // 実際のアプリケーションでは、ここでAPIにデータを送信します
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // EmailJSの初期化
+  useEffect(() => {
+    if (emailJsConfig.publicKey) {
+      emailjs.init(emailJsConfig.publicKey);
+      console.log('EmailJS initialized for Order Form');
+    } else {
+      console.error('EmailJS Public Key is not set');
+    }
+  }, []);
+
+  const onSubmit = async (data: FormData) => {
+    console.log('📧 お申し込みフォーム送信開始');
+    console.log('送信データ:', data);
+    setIsSending(true);
+
+    try {
+      // 環境変数の確認
+      console.log('EmailJS設定:', {
+        serviceId: emailJsConfig.serviceId,
+        templateId: emailJsConfig.orderTemplateId,
+        publicKey: emailJsConfig.publicKey ? '設定済み' : '未設定'
+      });
+
+      if (!emailJsConfig.serviceId || !emailJsConfig.orderTemplateId) {
+        throw new Error('EmailJS configuration is missing');
+      }
+
+      // 配列データを文字列に変換
+      const selectedPages = data.pages?.join(', ') || '未選択';
+      const selectedFeatures = data.features?.join(', ') || '未選択';
+
+      // 送信するテンプレートパラメータ
+      const templateParams = {
+        form_type: 'WEB制作お申し込み',
+        company_name: data.companyName,
+        person_name: data.personName,
+        email: data.email,
+        phone: data.phone,
+        industry: data.industry,
+        purpose: data.purpose,
+        design_image: data.designImage,
+        page_count: data.pageCount || '未入力',
+        pages: selectedPages,
+        features: selectedFeatures,
+        budget: data.budget,
+        deadline: data.deadline || '未入力',
+        reference_urls: data.referenceUrls || '未入力',
+        other_requests: data.otherRequests || '未入力',
+      };
+
+      console.log('📤 EmailJS送信中...', templateParams);
+
+      // EmailJSでメールを送信
+      const result = await emailjs.send(
+        emailJsConfig.serviceId,
+        emailJsConfig.orderTemplateId,
+        templateParams
+      );
+
+      console.log('✅ EmailJS送信結果:', result);
+
+      if (result.status === 200) {
+        console.log('🎉 お申し込みメール送信成功！');
+        setIsSubmitted(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        console.error('❌ 予期しないステータス:', result.status);
+        throw new Error('送信に失敗しました');
+      }
+    } catch (error) {
+      console.error('❌ 送信エラー:', error);
+      if (error instanceof Error) {
+        console.error('エラーメッセージ:', error.message);
+      }
+      alert('送信中にエラーが発生しました。もう一度お試しください。');
+    } finally {
+      setIsSending(false);
+      console.log('📧 お申し込みフォーム送信処理完了');
+    }
   };
 
   if (isSubmitted) {
@@ -416,10 +493,15 @@ export default function OrderFormPage() {
             <div className="pt-6">
               <button
                 type="submit"
-                className="w-full bg-yellow-600 text-white px-8 py-4 rounded-lg hover:bg-yellow-700 transition-colors inline-flex items-center justify-center gap-2 text-lg font-semibold group"
+                disabled={isSending}
+                className="w-full bg-yellow-600 text-white px-8 py-4 rounded-lg hover:bg-yellow-700 transition-colors inline-flex items-center justify-center gap-2 text-lg font-semibold group disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send className="group-hover:translate-x-1 transition-transform" size={24} />
-                お申し込み内容を送信
+                {isSending ? '送信中...' : (
+                  <>
+                    <Send className="group-hover:translate-x-1 transition-transform" size={24} />
+                    お申し込み内容を送信
+                  </>
+                )}
               </button>
               <p className="mt-4 text-sm text-gray-600 text-center">
                 送信後、3営業日以内にご連絡させていただきます
