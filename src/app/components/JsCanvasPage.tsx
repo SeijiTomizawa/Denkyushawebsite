@@ -17,7 +17,7 @@ export default function JsCanvasPage() {
           <div className="w-20 h-20 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6">
             <Palette className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">Canvas API</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">Canvas API</h1>
           <p className="text-xl text-gray-600">
             Canvas APIは、JavaScriptを使って図形やグラフィックを動的に描画できる強力なツールです。
             ゲーム、データ可視化、画像処理など、様々な用途に活用できます。

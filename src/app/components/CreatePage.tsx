@@ -144,10 +144,10 @@ export default function CreatePage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm mb-6">
+              <div className="text-xs bg-gray-900 text-white px-4 py-2 rounded-full inline-block mb-6">
                 WEB制作サービス
               </div>
-              <h1 className="text-5xl md:text-6xl mb-6 text-gray-900">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl mb-6 text-gray-900">
                 ビジネスを加速する
                 <br />
                 <span className="text-yellow-600">WEBサイト制作</span>

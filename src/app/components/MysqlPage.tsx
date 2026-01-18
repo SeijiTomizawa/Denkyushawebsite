@@ -37,10 +37,10 @@ export default function MysqlPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="w-20 h-20 bg-green-600 rounded-2xl flex items-center justify-center mb-6">
+          <div className="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
             <Database className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">データベース - MySQL</h1>
+          <h1 className="text-3xl md:text-5xl mb-6 text-gray-900">データベース - MySQL</h1>
           <p className="text-xl text-gray-600">
             MySQLは、世界で最も普及しているオープンソースのリレーショナルデータベース管理システムです。
             高速で信頼性が高く、多くのWebアプリケーションで使用されています。

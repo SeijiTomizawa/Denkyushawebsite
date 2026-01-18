@@ -17,7 +17,7 @@ export default function HtmlTablesPage() {
           <div className="w-20 h-20 bg-lime-600 rounded-2xl flex items-center justify-center mb-6">
             <Table className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">テーブル</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">テーブル</h1>
           <p className="text-xl text-gray-600">
             テーブル要素を使ってデータを表形式で表示する方法を学びます。
             構造化されたデータを見やすく整理できます。

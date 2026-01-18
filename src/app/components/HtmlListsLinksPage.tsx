@@ -17,7 +17,7 @@ export default function HtmlListsLinksPage() {
           <div className="w-20 h-20 bg-amber-600 rounded-2xl flex items-center justify-center mb-6">
             <List className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">リストとリンク</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">リストとリンク</h1>
           <p className="text-xl text-gray-600">
             リスト要素を使ったコンテンツの整理と、リンクを使ったページ間のナビゲーションについて学びます。
             これらはWebサイトの重要な構成要素です。

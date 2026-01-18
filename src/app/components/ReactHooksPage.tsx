@@ -17,7 +17,7 @@ export default function ReactHooksPage() {
           <div className="w-20 h-20 bg-cyan-600 rounded-2xl flex items-center justify-center mb-6">
             <Zap className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">React Hooks</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">React Hooks</h1>
           <p className="text-xl text-gray-600">
             HooksはReact 16.8で導入された機能で、関数コンポーネントで状態管理やライフサイクルメソッドを使えるようにします。
             クラスコンポーネントを書かずに、Reactのすべての機能を利用できます。

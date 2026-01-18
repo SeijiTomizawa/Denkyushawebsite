@@ -17,7 +17,7 @@ export default function PhpDatabaseControlPage() {
           <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
             <Database className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">PHPデータベース制御</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">PHPデータベース制御</h1>
           <p className="text-xl text-gray-600">
             PHPでのデータベース操作を効率的かつ安全に行うための設計パターンとベストプラクティスを学びます。
             DAOパターン、設定の外部化、SQLファイルの管理など、実践的な開発手法を習得します。

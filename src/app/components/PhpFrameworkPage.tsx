@@ -17,7 +17,7 @@ export default function PhpFrameworkPage() {
           <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
             <Server className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">PHP フレームワーク</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">PHP フレームワーク</h1>
           <p className="text-xl text-gray-600">
             PHPフレームワークを使用することで、効率的で保守性の高いWebアプリケーションを開発できます。
             MVCアーキテクチャパターンの理解と、LaravelやSymfonyなどの主要フレームワークの活用方法を学びます。

@@ -17,7 +17,7 @@ export default function CssBasicSyntaxPage() {
           <div className="w-20 h-20 bg-pink-600 rounded-2xl flex items-center justify-center mb-6">
             <Code className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">CSS 基本構文</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">CSS 基本構文</h1>
           <p className="text-xl text-gray-600">
             CSSの基本的な文法、セレクタ、プロパティ、ボックスモデル、レイアウトについて学びます。
             これらはWebデザインの基礎となる重要な要素です。

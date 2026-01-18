@@ -57,10 +57,10 @@ export default function CssMainPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="w-20 h-20 bg-pink-600 rounded-2xl flex items-center justify-center mb-6">
+          <div className="w-16 h-16 bg-pink-600 rounded-xl flex items-center justify-center mb-6">
             <Palette className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">CSS</h1>
+          <h1 className="text-3xl md:text-5xl mb-6 text-gray-900">CSS</h1>
           <p className="text-xl text-gray-600">
             CSS（Cascading Style Sheets）は、Webページのデザインやレイアウトを制御するスタイルシート言語です。
             基本から最新のモダンな技術まで、体系的に学びましょう。

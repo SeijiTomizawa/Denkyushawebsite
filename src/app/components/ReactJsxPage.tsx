@@ -17,7 +17,7 @@ export default function ReactJsxPage() {
           <div className="w-20 h-20 bg-sky-600 rounded-2xl flex items-center justify-center mb-6">
             <FileCode className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">JSX</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">JSX</h1>
           <p className="text-xl text-gray-600">
             JSX（JavaScript XML）は、JavaScriptの中にHTMLのような構文を書くことができるReactの拡張構文です。
             UIの構造を直感的に記述でき、JavaScriptの全機能を活用できます。

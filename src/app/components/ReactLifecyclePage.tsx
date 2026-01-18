@@ -17,7 +17,7 @@ export default function ReactLifecyclePage() {
           <div className="w-20 h-20 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6">
             <RefreshCw className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">React ライフサイクル</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">React ライフサイクル</h1>
           <p className="text-xl text-gray-600">
             ライフサイクルとは、Reactコンポーネントが生まれてから消えるまでの一連の流れです。
             マウント、更新、アンマウントの各フェーズを理解することで、適切なタイミングで処理を実行できます。

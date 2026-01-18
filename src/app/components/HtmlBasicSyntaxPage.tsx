@@ -17,7 +17,7 @@ export default function HtmlBasicSyntaxPage() {
           <div className="w-20 h-20 bg-orange-600 rounded-2xl flex items-center justify-center mb-6">
             <Code className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">HTML 基本構文</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">HTML 基本構文</h1>
           <p className="text-xl text-gray-600">
             HTMLの基礎となるタグの構造、文書構造、見出し、段落、テキスト装飾について学びます。
             これらはすべてのWebページの土台となる重要な要素です。

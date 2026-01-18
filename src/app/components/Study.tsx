@@ -57,7 +57,7 @@ export default function Study() {
     <div className="min-h-screen pt-24 pb-20 px-6 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl mb-6 text-gray-900">学習コンテンツ</h1>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl mb-6 text-gray-900">学習コンテンツ</h1>
           <p className="text-xl text-gray-600">
             WEB開発に必要な技術を体系的に学びましょう
           </p>

@@ -17,7 +17,7 @@ export default function JsDomPage() {
           <div className="w-20 h-20 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6">
             <MousePointer className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">DOM操作</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">DOM操作</h1>
           <p className="text-xl text-gray-600">
             DOM（Document Object Model）を操作することで、HTMLの要素を動的に変更できます。
             要素の取得、操作、イベント処理について学びます。

@@ -17,7 +17,7 @@ export default function HtmlFormsPage() {
           <div className="w-20 h-20 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6">
             <FileText className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">フォーム</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">フォーム</h1>
           <p className="text-xl text-gray-600">
             フォーム要素を使ってユーザーからの入力を受け取る方法を学びます。
             問い合わせフォーム、ログインフォーム、検索フォームなどに必要不可欠な要素です。

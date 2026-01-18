@@ -47,10 +47,10 @@ export default function PhpPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
+          <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
             <Server className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">バックエンド - PHP</h1>
+          <h1 className="text-3xl md:text-5xl mb-6 text-gray-900">バックエンド - PHP</h1>
           <p className="text-xl text-gray-600">
             PHPは、サーバーサイドのスクリプト言語で、動的なWebページの生成に広く使用されています。
             データベースとの連携やセッション管理など、Webアプリケーション開発に必要な機能が充実しています。

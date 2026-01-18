@@ -17,7 +17,7 @@ export default function HtmlSemanticPage() {
           <div className="w-20 h-20 bg-teal-600 rounded-2xl flex items-center justify-center mb-6">
             <Layout className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">セマンティックHTML</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">セマンティックHTML</h1>
           <p className="text-xl text-gray-600">
             意味論的なタグを使って、文書の構造を明確にする方法を学びます。
             SEOとアクセシビリティの向上に不可欠な技術です。
@@ -30,7 +30,7 @@ export default function HtmlSemanticPage() {
             <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
               <Layout className="text-teal-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">セマンティックHTMLとは</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">セマンティックHTMLとは</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
@@ -41,7 +41,7 @@ export default function HtmlSemanticPage() {
             </p>
 
             <div className="bg-teal-50 rounded-lg p-6 border border-teal-200">
-              <h4 className="text-xl mb-3 text-gray-900">セマンティックHTMLの利点</h4>
+              <h4 className="text-base md:text-lg lg:text-xl mb-3 text-gray-900">セマンティックHTMLの利点</h4>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-teal-600 mt-1">•</span>
@@ -70,7 +70,7 @@ export default function HtmlSemanticPage() {
             <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
               <Layout className="text-teal-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">文書構造タグ</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">文書構造タグ</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
@@ -134,7 +134,7 @@ export default function HtmlSemanticPage() {
             <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
               <Layout className="text-teal-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">主要なセマンティック要素</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">主要なセマンティック要素</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
@@ -225,7 +225,7 @@ export default function HtmlSemanticPage() {
             <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
               <Layout className="text-teal-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">ブログページの例</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">ブログページの例</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
@@ -317,11 +317,11 @@ export default function HtmlSemanticPage() {
             <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
               <Layout className="text-teal-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">悪い例と良い例</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">悪い例と良い例</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
-            <h3 className="text-2xl mb-4 text-gray-900">❌ 悪い例（セマンティックでない）</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-900">❌ 悪い例（セマンティックでない）</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -346,7 +346,7 @@ export default function HtmlSemanticPage() {
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">✅ 良い例（セマンティック）</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">✅ 良い例（セマンティック）</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -381,7 +381,7 @@ export default function HtmlSemanticPage() {
             <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
               <Layout className="text-teal-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">ARIA（補助的なアクセシビリティ）</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">ARIA（補助的なアクセシビリティ）</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
@@ -438,7 +438,7 @@ export default function HtmlSemanticPage() {
 
         {/* 学習のまとめ */}
         <div className="bg-teal-50 rounded-2xl p-8 border border-teal-200">
-          <h3 className="text-2xl mb-4 text-gray-900">学習のまとめ</h3>
+          <h3 className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-900">学習のまとめ</h3>
           <div className="space-y-4 text-gray-700">
             <p>
               セマンティックHTMLを使うことで、文書の構造が明確になり、SEOとアクセシビリティが向上します。

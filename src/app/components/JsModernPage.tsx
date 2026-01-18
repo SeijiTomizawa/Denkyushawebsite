@@ -17,7 +17,7 @@ export default function JsModernPage() {
           <div className="w-20 h-20 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6">
             <Package className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">モダンJavaScript（ES6+）</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">モダンJavaScript（ES6+）</h1>
           <p className="text-xl text-gray-600">
             ES6（ES2015）以降のJavaScriptに追加された新機能を学びます。
             分割代入、スプレッド演算子、テンプレートリテラル、モジュールなど、

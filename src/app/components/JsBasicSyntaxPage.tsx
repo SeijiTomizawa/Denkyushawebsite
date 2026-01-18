@@ -17,7 +17,7 @@ export default function JsBasicSyntaxPage() {
           <div className="w-20 h-20 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6">
             <Code className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">JavaScript 基本構文</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">JavaScript 基本構文</h1>
           <p className="text-xl text-gray-600">
             JavaScriptの基本的な文法、変数、データ型、演算子、制御構文について学びます。
             これらはJavaScriptプログラミングの基礎となる重要な要素です。

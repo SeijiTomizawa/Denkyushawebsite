@@ -17,7 +17,7 @@ export default function CssExternalFilesPage() {
           <div className="w-20 h-20 bg-pink-600 rounded-2xl flex items-center justify-center mb-6">
             <FileCode className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">CSS 外部ファイル化</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">CSS 外部ファイル化</h1>
           <p className="text-xl text-gray-600">
             CSSを外部ファイルとして管理する方法、ファイル構成、ベストプラクティスについて学びます。
             適切なファイル管理により、保守性と再利用性が向上します。
@@ -30,11 +30,11 @@ export default function CssExternalFilesPage() {
             <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
               <FileCode className="text-pink-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">CSSの読み込み方法</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">CSSの読み込み方法</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
-            <h3 className="text-2xl mb-4 text-gray-900">1. 外部CSSファイル（推奨）</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-900">1. 外部CSSファイル（推奨）</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -81,7 +81,7 @@ export default function CssExternalFilesPage() {
               </ul>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">2. 内部CSS</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">2. 内部CSS</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -121,7 +121,7 @@ export default function CssExternalFilesPage() {
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">3. インラインCSS</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">3. インラインCSS</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -147,7 +147,7 @@ export default function CssExternalFilesPage() {
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">4. @import（非推奨）</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">4. @import（非推奨）</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -177,11 +177,11 @@ export default function CssExternalFilesPage() {
             <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
               <FolderTree className="text-pink-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">ファイル構成</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">ファイル構成</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
-            <h3 className="text-2xl mb-4 text-gray-900">基本的な構成</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-900">基本的な構成</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -197,7 +197,7 @@ export default function CssExternalFilesPage() {
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">モジュール化された構成</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">モジュール化された構成</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -229,7 +229,7 @@ export default function CssExternalFilesPage() {
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">BEM方式の構成</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">BEM方式の構成</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -259,11 +259,11 @@ export default function CssExternalFilesPage() {
             <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
               <Settings className="text-pink-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">命名規則とベストプラクティス</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">命名規則とベストプラクティス</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
-            <h3 className="text-2xl mb-4 text-gray-900">BEM（Block Element Modifier）</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-900">BEM（Block Element Modifier）</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -302,7 +302,7 @@ export default function CssExternalFilesPage() {
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">その他の命名規則</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">その他の命名規則</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -343,7 +343,7 @@ a { }
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">命名のベストプラクティス</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">命名のベストプラクティス</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -394,7 +394,7 @@ a { }
             <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
               <Settings className="text-pink-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">CSSの最適化</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">CSSの最適化</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
@@ -474,11 +474,11 @@ div#content .post .title h2 { }
             <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
               <FileCode className="text-pink-600" size={24} />
             </div>
-            <h2 className="text-3xl text-gray-900">リセットCSS / ノーマライズCSS</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-900">リセットCSS / ノーマライズCSS</h2>
           </div>
           
           <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
-            <h3 className="text-2xl mb-4 text-gray-900">リセットCSS（Reset CSS）</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-900">リセットCSS（Reset CSS）</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -535,7 +535,7 @@ table {
               </pre>
             </div>
 
-            <h3 className="text-2xl mb-4 mt-8 text-gray-900">ノーマライズCSS（Normalize.css）</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl mb-4 mt-8 text-gray-900">ノーマライズCSS（Normalize.css）</h3>
             
             <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto mb-6">
               <pre className="text-green-400 text-sm">
@@ -569,7 +569,7 @@ modern-normalizeの特徴：
 
         {/* 学習のまとめ */}
         <div className="bg-pink-50 rounded-2xl p-8 border border-pink-200">
-          <h3 className="text-2xl mb-4 text-gray-900">学習のまとめ</h3>
+          <h3 className="text-lg md:text-xl lg:text-2xl mb-4 text-gray-900">学習のまとめ</h3>
           <div className="space-y-4 text-gray-700">
             <p>
               CSSの外部ファイル化について、読み込み方法、ファイル構成、命名規則、最適化手法を学びました。

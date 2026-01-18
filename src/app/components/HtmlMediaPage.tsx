@@ -17,7 +17,7 @@ export default function HtmlMediaPage() {
           <div className="w-20 h-20 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6">
             <Image className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">画像とメディア</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">画像とメディア</h1>
           <p className="text-xl text-gray-600">
             画像、動画、音声、iframeなどのメディア要素をWebページに埋め込む方法を学びます。
             視覚的なコンテンツでユーザー体験を向上させましょう。

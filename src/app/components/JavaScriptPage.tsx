@@ -14,10 +14,10 @@ export default function JavaScriptPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="w-20 h-20 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6">
+          <div className="w-16 h-16 bg-yellow-600 rounded-xl flex items-center justify-center mb-6">
             <Braces className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">JavaScript / TypeScript</h1>
+          <h1 className="text-3xl md:text-5xl mb-6 text-gray-900">JavaScript / TypeScript</h1>
           <p className="text-xl text-gray-600">
             JavaScriptはWebページに動的な機能を追加するプログラミング言語です。
             TypeScriptはJavaScriptに型安全性を追加した言語で、大規模なアプリケーション開発に適しています。
@@ -175,7 +175,7 @@ Object.keys(person).forEach(key => {
           </div>
         </div>
 
-        {/* 関数 */}
+        {/* 関��� */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">

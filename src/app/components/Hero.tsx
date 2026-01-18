@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-5xl md:text-6xl mb-6 text-gray-900">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl mb-6 text-gray-900">
               あなたのビジネスを
               <br />
               <span className="text-yellow-600">明るく照らす</span>

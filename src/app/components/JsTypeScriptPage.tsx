@@ -17,7 +17,7 @@ export default function JsTypeScriptPage() {
           <div className="w-20 h-20 bg-yellow-600 rounded-2xl flex items-center justify-center mb-6">
             <FileJson className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">TypeScript</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">TypeScript</h1>
           <p className="text-xl text-gray-600">
             TypeScriptは、JavaScriptに型システムを追加した言語です。
             型安全性により、バグを早期に発見し、より保守しやすいコードを書けます。

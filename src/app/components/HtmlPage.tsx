@@ -14,10 +14,10 @@ export default function HtmlPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="w-20 h-20 bg-orange-600 rounded-2xl flex items-center justify-center mb-6">
+          <div className="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
             <FileCode className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">HTML</h1>
+          <h1 className="text-3xl md:text-5xl mb-6 text-gray-900">HTML</h1>
           <p className="text-xl text-gray-600">
             HTMLはHyperText Markup Languageの略で、Webページの構造を定義するマークアップ言語です。
             すべてのWebサイトの基礎となる技術を学びましょう。
@@ -309,7 +309,7 @@ export default function HtmlPage() {
         <td>データ1</td>
     </tr>
     <tr>
-        <td>データ2</td>
+        <td>���ータ2</td>
     </tr>
 </table>`}</code>
               </pre>

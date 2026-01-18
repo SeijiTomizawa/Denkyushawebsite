@@ -65,10 +65,10 @@ export default function HtmlMainPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="w-20 h-20 bg-orange-600 rounded-2xl flex items-center justify-center mb-6">
+          <div className="w-16 h-16 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
             <FileCode className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">HTML</h1>
+          <h1 className="text-3xl md:text-5xl mb-6 text-gray-900">HTML</h1>
           <p className="text-xl text-gray-600">
             HTML（HyperText Markup Language）は、Webページの構造を定義するマークアップ言語です。
             すべてのWebサイトの基礎となる技術を、体系的に学びましょう。

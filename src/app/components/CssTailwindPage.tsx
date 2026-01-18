@@ -17,7 +17,7 @@ export default function CssTailwindPage() {
           <div className="w-20 h-20 bg-cyan-600 rounded-2xl flex items-center justify-center mb-6">
             <Layers className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">Tailwind CSS</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">Tailwind CSS</h1>
           <p className="text-xl text-gray-600">
             Tailwind CSSは、ユーティリティファーストのCSSフレームワークです。
             事前定義されたクラスを組み合わせることで、素早く柔軟にUIを構築できます。

@@ -17,7 +17,7 @@ export default function ReactComponentPage() {
           <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
             <Component className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">React コンポーネント</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">React コンポーネント</h1>
           <p className="text-xl text-gray-600">
             コンポーネントはReactアプリケーションの基本的な構成要素です。
             UIを独立した再利用可能な部品に分割し、それぞれを個別に管理できます。

@@ -17,7 +17,7 @@ export default function CssVanillaExtractPage() {
           <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
             <Paintbrush className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">vanilla-extract</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">vanilla-extract</h1>
           <p className="text-xl text-gray-600">
             vanilla-extractは、TypeScriptでCSSを記述できる型安全なCSS-in-JSライブラリです。
             ゼロランタイムで、ビルド時に静的なCSSファイルを生成します。

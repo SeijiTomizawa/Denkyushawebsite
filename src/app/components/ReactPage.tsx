@@ -37,10 +37,10 @@ export default function ReactPage() {
         </Link>
 
         <div className="mb-12">
-          <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mb-6">
+          <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
             <Code className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">フロントエンド - React</h1>
+          <h1 className="text-3xl md:text-5xl mb-6 text-gray-900">フロントエンド - React</h1>
           <p className="text-xl text-gray-600">
             Reactは、Facebookが開発したユーザーインターフェースを構築するためのJavaScriptライブラリです。
             コンポーネントベースの開発により、再利用可能で保守性の高いコードを書くことができます。

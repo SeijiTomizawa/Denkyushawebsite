@@ -17,7 +17,7 @@ export default function CssModernPage() {
           <div className="w-20 h-20 bg-pink-600 rounded-2xl flex items-center justify-center mb-6">
             <Sparkles className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">モダンCSS</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">モダンCSS</h1>
           <p className="text-xl text-gray-600">
             Flexbox、Grid、CSS変数、アニメーションなど、モダンなCSSの技術を学びます。
             これらの機能を使うことで、より柔軟で保守しやすいデザインを実現できます。

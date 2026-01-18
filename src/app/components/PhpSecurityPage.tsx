@@ -17,7 +17,7 @@ export default function PhpSecurityPage() {
           <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
             <Shield className="text-white" size={40} />
           </div>
-          <h1 className="text-5xl mb-6 text-gray-900">PHP セキュリティ</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl mb-6 text-gray-900">PHP セキュリティ</h1>
           <p className="text-xl text-gray-600">
             Webアプリケーションのセキュリティは最も重要な要素の一つです。
             SQLインジェクション、XSS、CSRFなどの一般的な脆弱性とその対策方法を学び、
