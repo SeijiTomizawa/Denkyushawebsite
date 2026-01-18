@@ -7,6 +7,7 @@ import Portfolio from '@/app/components/Portfolio';
 import About from '@/app/components/About';
 import Contact from '@/app/components/Contact';
 import Footer from '@/app/components/Footer';
+import ScrollToTop from '@/app/components/ScrollToTop';
 import Study from '@/app/components/Study';
 import HtmlMainPage from '@/app/components/HtmlMainPage';
 import HtmlBasicSyntaxPage from '@/app/components/HtmlBasicSyntaxPage';
@@ -60,6 +61,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen">
         <Header />
         <main>
