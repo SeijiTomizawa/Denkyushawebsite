@@ -9,82 +9,66 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-12 px-6">
-      <div className="container mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <Link to="/" onClick={scrollToTop} className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity">
-              <div className="relative">
-                <Lightbulb
-                  className="text-yellow-500 w-7 h-7"
-                  fill="currentColor"
-                />
-                <div className="absolute inset-0 blur-lg bg-yellow-400 opacity-30 animate-pulse" />
-              </div>
-              <div className="text-2xl font-bold">
-                電究社 <small>- DENKYUSHA -</small>
-              </div>
-            </Link>
-            <p className="text-gray-400">
-              あなたのビジネスをデジタルで明るく照らす、WEB制作のプロフェッショナル。
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg mb-4">サービス</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link to="/create" className="hover:text-yellow-500 transition-colors">
-                  WEBサイト制作
-                </Link>
-              </li>
-              <li>
-                <Link to="/service" className="hover:text-yellow-500 transition-colors">
-                  WordPressヘッドレス化
-                </Link>
-              </li>
-              <li>
-                <Link to="/study" className="hover:text-yellow-500 transition-colors">
-                  プログラミング学習
-                </Link>
-              </li>
-              <li>
-                <Link to="/order" className="hover:text-yellow-500 transition-colors">
-                  お申し込み
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg mb-4">ページ</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link to="/" onClick={scrollToTop} className="hover:text-yellow-500 transition-colors">
-                  TOP
-                </Link>
-              </li>
-              <li>
-                <Link to="/service" className="hover:text-yellow-500 transition-colors">
-                  SERVICE
-                </Link>
-              </li>
-              <li>
-                <Link to="/create" className="hover:text-yellow-500 transition-colors">
-                  CREATE
-                </Link>
-              </li>
-              <li>
-                <Link to="/study" className="hover:text-yellow-500 transition-colors">
-                  STUDY
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="bg-[#050505] border-t border-[#d4a574] border-opacity-10 py-24 px-6">
+      <div className="container mx-auto max-w-5xl">
+        {/* Minimal logo */}
+        <div className="text-center mb-20">
+          <Link to="/" onClick={scrollToTop} className="inline-flex flex-col items-center gap-4 group">
+            <Lightbulb 
+              className="text-[#d4a574] w-6 h-6 opacity-60 group-hover:opacity-90 transition-all duration-700" 
+              fill="currentColor"
+              strokeWidth={1}
+            />
+            <div 
+              className="text-base tracking-[0.4em] text-[#f5f5f0] opacity-60 group-hover:opacity-90 transition-opacity duration-700"
+              style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
+            >
+              電究社
+            </div>
+          </Link>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>
+        {/* Minimal navigation */}
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-20">
+          <Link 
+            to="/service" 
+            className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 hover:opacity-100 transition-opacity duration-500 uppercase"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+          >
+            Service
+          </Link>
+          <Link 
+            to="/create" 
+            className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 hover:opacity-100 transition-opacity duration-500 uppercase"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+          >
+            Create
+          </Link>
+          <Link 
+            to="/study" 
+            className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 hover:opacity-100 transition-opacity duration-500 uppercase"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+          >
+            Study
+          </Link>
+          <Link 
+            to="/order" 
+            className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 hover:opacity-100 transition-opacity duration-500 uppercase"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+          >
+            Order
+          </Link>
+        </div>
+
+        {/* Thin divider */}
+        <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#d4a574]/30 to-transparent mx-auto mb-12" />
+
+        {/* Copyright */}
+        <div className="text-center">
+          <p 
+            className="text-xs text-[#9a9a9a] opacity-40 tracking-wider"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+          >
             &copy; {currentYear} 電究社. All rights reserved.
           </p>
         </div>

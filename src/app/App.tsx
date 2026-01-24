@@ -8,6 +8,7 @@ import About from '@/app/components/About';
 import Contact from '@/app/components/Contact';
 import Footer from '@/app/components/Footer';
 import ScrollToTop from '@/app/components/ScrollToTop';
+import FlashlightCursor from '@/app/components/FlashlightCursor';
 import Study from '@/app/components/Study';
 import HtmlMainPage from '@/app/components/HtmlMainPage';
 import HtmlBasicSyntaxPage from '@/app/components/HtmlBasicSyntaxPage';
@@ -62,6 +63,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <FlashlightCursor />
       <div className="min-h-screen">
         <Header />
         <main>

@@ -1,54 +1,94 @@
 const portfolioItems = [
   {
     title: '企業WEBサイト',
-    category: 'コーポレートサイト',
+    category: 'Corporate',
     image: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGV2ZWxvcG1lbnQlMjBjb2Rpbmd8ZW58MXx8fHwxNzY4Njk1NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: 'モダンなデザインと使いやすさを両立した企業サイト',
   },
   {
     title: 'ECプラットフォーム',
-    category: 'ECサイト',
+    category: 'E-Commerce',
     image: 'https://images.unsplash.com/photo-1666698809123-44e998e93f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRpZ2l0YWwlMjBhZ2VuY3l8ZW58MXx8fHwxNzY4Njk1NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: '直感的なUIで高いコンバージョンを実現',
   },
   {
     title: 'ブランディングサイト',
-    category: 'ブランディング',
+    category: 'Branding',
     image: 'https://images.unsplash.com/photo-1728598909887-2d983a8889b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXNpZ24lMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY4NjU5NDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    description: 'ブランドの世界観を表現した特別なサイト',
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-20 px-6 bg-gray-50">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">制作実績</h2>
-          <p className="text-xl text-gray-600">
-            これまでに手がけたプロジェクトの一部をご紹介します
+    <section id="portfolio" className="py-48 px-6 bg-[#050505] relative">
+      <div className="container mx-auto max-w-5xl relative z-10">
+        {/* Minimal header */}
+        <div className="text-center mb-32">
+          <div className="divider-line mx-auto mb-12" />
+          <h2 
+            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#d4a574]"
+            style={{ 
+              fontFamily: "'Noto Serif JP', serif", 
+              fontWeight: 300,
+              textShadow: '0 0 30px rgba(212, 165, 116, 0.5), 0 0 60px rgba(212, 165, 116, 0.2)'
+            }}
+          >
+            制作実績
+          </h2>
+          <p 
+            className="text-sm text-[#d4a574] opacity-70 tracking-wider"
+            style={{ 
+              fontFamily: "'Cormorant Garamond', serif", 
+              fontWeight: 300,
+              textShadow: '0 0 10px rgba(212, 165, 116, 0.3)'
+            }}
+          >
+            Portfolio
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Portfolio items - sparse grid */}
+        <div className="space-y-32">
           {portfolioItems.map((item, index) => (
             <div 
               key={index}
-              className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group"
+              style={{
+                animation: `fadeIn 1s ease-out ${index * 0.3}s both`
+              }}
             >
-              <div className="relative overflow-hidden aspect-video">
-                <img 
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Image container */}
+              <div className="relative overflow-hidden mb-8 border border-[#d4a574] border-opacity-10">
+                <div className="aspect-[16/10] relative">
+                  <img 
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-700"
+                    style={{ filter: 'grayscale(60%) contrast(1.1)' }}
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-40" />
+                </div>
               </div>
-              <div className="p-6">
-                <div className="text-sm text-yellow-600 mb-2">{item.category}</div>
-                <h3 className="text-xl mb-2 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+              
+              {/* Project info */}
+              <div className="text-center">
+                <div 
+                  className="text-xs tracking-[0.3em] text-[#d4a574] opacity-50 mb-4 uppercase"
+                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                >
+                  {item.category}
+                </div>
+                <h3 
+                  className="text-2xl tracking-wider text-[#f5f5f0] text-fade"
+                  style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
+                >
+                  {item.title}
+                </h3>
               </div>
+
+              {/* Divider */}
+              {index < portfolioItems.length - 1 && (
+                <div className="mt-32 w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent mx-auto" />
+              )}
             </div>
           ))}
         </div>
