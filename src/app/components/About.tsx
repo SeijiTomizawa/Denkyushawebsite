@@ -5,21 +5,21 @@ export default function About() {
         <div className="text-center mb-32">
           <div className="divider-line mx-auto mb-12" />
           <h2 
-            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#d4a574]"
+            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#e8c292]"
             style={{ 
               fontFamily: "'Noto Serif JP', serif", 
               fontWeight: 300,
-              textShadow: '0 0 30px rgba(212, 165, 116, 0.5), 0 0 60px rgba(212, 165, 116, 0.2)'
+              textShadow: '0 0 30px rgba(232, 194, 146, 0.6), 0 0 60px rgba(232, 194, 146, 0.3)'
             }}
           >
             会社概要
           </h2>
           <p 
-            className="text-sm text-[#d4a574] opacity-70 tracking-wider"
+            className="text-sm text-[#e8c292] opacity-80 tracking-wider"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif", 
               fontWeight: 300,
-              textShadow: '0 0 10px rgba(212, 165, 116, 0.3)'
+              textShadow: '0 0 10px rgba(232, 194, 146, 0.4)'
             }}
           >
             About
@@ -29,7 +29,7 @@ export default function About() {
         {/* Company description - sparse */}
         <div className="space-y-12 mb-32">
           <p 
-            className="text-center text-base md:text-lg text-[#9a9a9a] opacity-70 leading-loose tracking-wide"
+            className="text-center text-base md:text-lg text-[#b8b8b8] opacity-80 leading-loose tracking-wide"
             style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
           >
             電究社は、最先端のWEB技術とクリエイティブなデザインで、<br className="hidden md:block" />
@@ -38,11 +38,11 @@ export default function About() {
         </div>
 
         {/* Business info - minimal card */}
-        <div className="border border-[#d4a574] border-opacity-10 p-12 md:p-16">
+        <div className="border border-[#e8c292] border-opacity-10 p-12 md:p-16">
           <div className="space-y-10">
-            <div className="text-center pb-6 border-b border-[#d4a574] border-opacity-10">
+            <div className="text-center pb-6 border-b border-[#e8c292] border-opacity-10">
               <div 
-                className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 mb-3 uppercase"
+                className="text-xs tracking-[0.2em] text-[#e8c292] opacity-60 mb-3 uppercase"
                 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
               >
                 Business Name
@@ -55,9 +55,9 @@ export default function About() {
               </div>
             </div>
 
-            <div className="text-center pb-6 border-b border-[#d4a574] border-opacity-10">
+            <div className="text-center pb-6 border-b border-[#e8c292] border-opacity-10">
               <div 
-                className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 mb-3 uppercase"
+                className="text-xs tracking-[0.2em] text-[#e8c292] opacity-60 mb-3 uppercase"
                 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
               >
                 Representative
@@ -70,9 +70,9 @@ export default function About() {
               </div>
             </div>
 
-            <div className="text-center pb-6 border-b border-[#d4a574] border-opacity-10">
+            <div className="text-center pb-6 border-b border-[#e8c292] border-opacity-10">
               <div 
-                className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 mb-3 uppercase"
+                className="text-xs tracking-[0.2em] text-[#e8c292] opacity-60 mb-3 uppercase"
                 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
               >
                 Location
@@ -87,7 +87,7 @@ export default function About() {
 
             <div className="text-center">
               <div 
-                className="text-xs tracking-[0.2em] text-[#d4a574] opacity-50 mb-3 uppercase"
+                className="text-xs tracking-[0.2em] text-[#e8c292] opacity-60 mb-3 uppercase"
                 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
               >
                 Established

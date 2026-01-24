@@ -1,18 +1,13 @@
 const portfolioItems = [
   {
-    title: '企業WEBサイト',
-    category: 'Corporate',
-    image: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGV2ZWxvcG1lbnQlMjBjb2Rpbmd8ZW58MXx8fHwxNzY4Njk1NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  },
-  {
-    title: 'ECプラットフォーム',
-    category: 'E-Commerce',
-    image: 'https://images.unsplash.com/photo-1666698809123-44e998e93f23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMGRpZ2l0YWwlMjBhZ2VuY3l8ZW58MXx8fHwxNzY4Njk1NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-  },
-  {
-    title: 'ブランディングサイト',
-    category: 'Branding',
+    title: 'WEBサイト制作',
+    category: 'Website production',
     image: 'https://images.unsplash.com/photo-1728598909887-2d983a8889b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXNpZ24lMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzY4NjU5NDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+  },
+  {
+    title: 'WEBアプリケーション開発',
+    category: 'app development',
+    image: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwZGV2ZWxvcG1lbnQlMjBjb2Rpbmd8ZW58MXx8fHwxNzY4Njk1NDgyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
   },
 ];
 
@@ -24,21 +19,21 @@ export default function Portfolio() {
         <div className="text-center mb-32">
           <div className="divider-line mx-auto mb-12" />
           <h2 
-            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#d4a574]"
+            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#e8c292]"
             style={{ 
               fontFamily: "'Noto Serif JP', serif", 
               fontWeight: 300,
-              textShadow: '0 0 30px rgba(212, 165, 116, 0.5), 0 0 60px rgba(212, 165, 116, 0.2)'
+              textShadow: '0 0 30px rgba(232, 194, 146, 0.6), 0 0 60px rgba(232, 194, 146, 0.3)'
             }}
           >
             制作実績
           </h2>
           <p 
-            className="text-sm text-[#d4a574] opacity-70 tracking-wider"
+            className="text-sm text-[#e8c292] opacity-80 tracking-wider"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif", 
               fontWeight: 300,
-              textShadow: '0 0 10px rgba(212, 165, 116, 0.3)'
+              textShadow: '0 0 10px rgba(232, 194, 146, 0.4)'
             }}
           >
             Portfolio
@@ -56,7 +51,7 @@ export default function Portfolio() {
               }}
             >
               {/* Image container */}
-              <div className="relative overflow-hidden mb-8 border border-[#d4a574] border-opacity-10">
+              <div className="relative overflow-hidden mb-8 border border-[#e8c292] border-opacity-10">
                 <div className="aspect-[16/10] relative">
                   <img 
                     src={item.image}
@@ -72,7 +67,7 @@ export default function Portfolio() {
               {/* Project info */}
               <div className="text-center">
                 <div 
-                  className="text-xs tracking-[0.3em] text-[#d4a574] opacity-50 mb-4 uppercase"
+                  className="text-xs tracking-[0.3em] text-[#e8c292] opacity-60 mb-4 uppercase"
                   style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 >
                   {item.category}
@@ -87,7 +82,7 @@ export default function Portfolio() {
 
               {/* Divider */}
               {index < portfolioItems.length - 1 && (
-                <div className="mt-32 w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent mx-auto" />
+                <div className="mt-32 w-24 h-[1px] bg-gradient-to-r from-transparent via-[#e8c292]/20 to-transparent mx-auto" />
               )}
             </div>
           ))}

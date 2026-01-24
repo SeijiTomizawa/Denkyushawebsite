@@ -93,27 +93,27 @@ export default function Contact() {
   return (
     <section id="contact" className="py-48 px-6 bg-[#050505] relative min-h-screen flex items-center justify-center">
       {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#d4a574] opacity-[0.01] blur-[120px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#e8c292] opacity-[0.01] blur-[120px]" />
       
       <div className="container mx-auto max-w-2xl relative z-10">
         <div className="text-center mb-24">
           <div className="divider-line mx-auto mb-12" />
           <h2 
-            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#d4a574]"
+            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#e8c292]"
             style={{ 
               fontFamily: "'Noto Serif JP', serif", 
               fontWeight: 300,
-              textShadow: '0 0 30px rgba(212, 165, 116, 0.5), 0 0 60px rgba(212, 165, 116, 0.2)'
+              textShadow: '0 0 30px rgba(232, 194, 146, 0.6), 0 0 60px rgba(232, 194, 146, 0.3)'
             }}
           >
             お問い合わせ
           </h2>
           <p 
-            className="text-sm text-[#d4a574] opacity-70 tracking-wider"
+            className="text-sm text-[#e8c292] opacity-80 tracking-wider"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif", 
               fontWeight: 300,
-              textShadow: '0 0 10px rgba(212, 165, 116, 0.3)'
+              textShadow: '0 0 10px rgba(232, 194, 146, 0.4)'
             }}
           >
             Contact
@@ -122,8 +122,8 @@ export default function Contact() {
 
         {isSubmitted ? (
           <div className="text-center py-20">
-            <div className="w-16 h-16 border border-[#d4a574] border-opacity-30 flex items-center justify-center mx-auto mb-8">
-              <CheckCircle className="text-[#d4a574]" size={32} strokeWidth={1} />
+            <div className="w-16 h-16 border border-[#e8c292] border-opacity-30 flex items-center justify-center mx-auto mb-8">
+              <CheckCircle className="text-[#e8c292]" size={32} strokeWidth={1} />
             </div>
             <h3 
               className="text-2xl mb-8 text-[#f5f5f0] tracking-wider"
@@ -131,7 +131,7 @@ export default function Contact() {
             >
               送信完了
             </h3>
-            <p className="text-base text-[#9a9a9a] mb-12 leading-loose opacity-70"
+            <p className="text-base text-[#b8b8b8] mb-12 leading-loose opacity-80"
                style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}>
               お問い合わせありがとうございます。<br />
               3営業日以内にご連絡させていただきます。
@@ -149,7 +149,7 @@ export default function Contact() {
               <div>
                 <label 
                   htmlFor="name" 
-                  className="block text-xs tracking-[0.2em] text-[#d4a574] opacity-60 mb-4 uppercase"
+                  className="block text-xs tracking-[0.2em] text-[#e8c292] opacity-70 mb-4 uppercase"
                   style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
                 >
                   Name
@@ -161,7 +161,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#d4a574] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all placeholder-[#6b6b6b]"
+                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#e8c292] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all placeholder-[#6b6b6b]"
                   style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
                   placeholder="山田 太郎"
                 />
@@ -170,7 +170,7 @@ export default function Contact() {
               <div>
                 <label 
                   htmlFor="email" 
-                  className="block text-xs tracking-[0.2em] text-[#d4a574] opacity-60 mb-4 uppercase"
+                  className="block text-xs tracking-[0.2em] text-[#e8c292] opacity-70 mb-4 uppercase"
                   style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
                 >
                   Email
@@ -182,7 +182,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#d4a574] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all placeholder-[#6b6b6b]"
+                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#e8c292] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all placeholder-[#6b6b6b]"
                   style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
                   placeholder="example@email.com"
                 />
@@ -191,7 +191,7 @@ export default function Contact() {
               <div>
                 <label 
                   htmlFor="company" 
-                  className="block text-xs tracking-[0.2em] text-[#d4a574] opacity-60 mb-4 uppercase"
+                  className="block text-xs tracking-[0.2em] text-[#e8c292] opacity-70 mb-4 uppercase"
                   style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
                 >
                   Company <span className="opacity-50">(Optional)</span>
@@ -202,7 +202,7 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#d4a574] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all placeholder-[#6b6b6b]"
+                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#e8c292] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all placeholder-[#6b6b6b]"
                   style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
                   placeholder="株式会社〇〇"
                 />
@@ -211,7 +211,7 @@ export default function Contact() {
               <div>
                 <label 
                   htmlFor="message" 
-                  className="block text-xs tracking-[0.2em] text-[#d4a574] opacity-60 mb-4 uppercase"
+                  className="block text-xs tracking-[0.2em] text-[#e8c292] opacity-70 mb-4 uppercase"
                   style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
                 >
                   Message
@@ -223,7 +223,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#d4a574] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all resize-none placeholder-[#6b6b6b]"
+                  className="w-full px-0 py-4 text-base bg-transparent border-0 border-b border-[#e8c292] border-opacity-20 text-[#f5f5f0] focus:outline-none focus:border-opacity-50 transition-all resize-none placeholder-[#6b6b6b]"
                   style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
                   placeholder="ご相談内容をお聞かせください..."
                 />

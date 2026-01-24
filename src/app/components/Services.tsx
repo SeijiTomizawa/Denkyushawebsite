@@ -25,21 +25,21 @@ export default function Services() {
         <div className="text-center mb-32">
           <div className="divider-line mx-auto mb-12" />
           <h2 
-            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#d4a574]"
+            className="text-5xl md:text-6xl tracking-wider mb-6 text-[#e8c292]"
             style={{ 
               fontFamily: "'Noto Serif JP', serif", 
               fontWeight: 300,
-              textShadow: '0 0 30px rgba(212, 165, 116, 0.5), 0 0 60px rgba(212, 165, 116, 0.2)'
+              textShadow: '0 0 30px rgba(232, 194, 146, 0.6), 0 0 60px rgba(232, 194, 146, 0.3)'
             }}
           >
             サービス
           </h2>
           <p 
-            className="text-sm text-[#d4a574] opacity-70 tracking-wider"
+            className="text-sm text-[#e8c292] opacity-80 tracking-wider"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif", 
               fontWeight: 300,
-              textShadow: '0 0 10px rgba(212, 165, 116, 0.3)'
+              textShadow: '0 0 10px rgba(232, 194, 146, 0.4)'
             }}
           >
             Services
@@ -58,7 +58,7 @@ export default function Services() {
             >
               {/* Service number */}
               <div 
-                className="text-xs tracking-[0.3em] text-[#d4a574] opacity-40 mb-6"
+                className="text-xs tracking-[0.3em] text-[#e8c292] opacity-50 mb-6"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 {String(index + 1).padStart(2, '0')}
@@ -74,7 +74,7 @@ export default function Services() {
               
               {/* Description */}
               <p 
-                className="text-base text-[#9a9a9a] opacity-60 leading-loose tracking-wide max-w-md mx-auto"
+                className="text-base text-[#b8b8b8] opacity-70 leading-loose tracking-wide max-w-md mx-auto"
                 style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
               >
                 {service.description}
@@ -82,7 +82,7 @@ export default function Services() {
               
               {/* Thin line separator */}
               {index < services.length - 1 && (
-                <div className="mt-24 w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent mx-auto" />
+                <div className="mt-24 w-16 h-[1px] bg-gradient-to-r from-transparent via-[#e8c292]/20 to-transparent mx-auto" />
               )}
             </div>
           ))}

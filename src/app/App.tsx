@@ -44,7 +44,6 @@ import PhpSecurityPage from '@/app/components/PhpSecurityPage';
 import MysqlPage from '@/app/components/MysqlPage';
 import CreatePage from '@/app/components/CreatePage';
 import OrderFormPage from '@/app/components/OrderFormPage';
-import ServicePage from '@/app/components/ServicePage';
 
 function HomePage() {
   return (
@@ -69,7 +68,6 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/service" element={<ServicePage />} />
             <Route path="/create" element={<CreatePage />} />
             <Route path="/order" element={<OrderFormPage />} />
             <Route path="/study" element={<Study />} />

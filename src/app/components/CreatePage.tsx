@@ -31,7 +31,7 @@ const processes = [
 const frontendPlans = [
   {
     name: 'ライトプラン',
-    price: '¥50,000',
+    price: '¥100,000',
     period: '〜',
     description: 'シンプルなコーポレートサイト',
     features: [
@@ -46,7 +46,7 @@ const frontendPlans = [
   },
   {
     name: 'スタンダードプラン',
-    price: '¥100,000',
+    price: '¥200,000',
     period: '〜',
     description: '本格的なビジネスサイト',
     features: [
@@ -80,12 +80,13 @@ const backendPlans = [
     ],
     color: 'border-[#d4a574]',
     buttonColor: 'border border-[#d4a574] text-[#d4a574] hover:bg-[#d4a574] hover:text-black',
+    recommended: true,
   },
   {
-    name: 'プレミアムプラン',
-    price: '¥500,000',
-    period: '〜',
-    description: '大規模サイト・ECサイト',
+    name: 'アドバンスドプラン',
+    price: 'ASK',
+    period: '',
+    description: '大規模サイト・ECサイト・Webアプリケーション',
     features: [
       'ページ数無制限',
       'レスポンシブデザイン',
@@ -94,12 +95,12 @@ const backendPlans = [
       '決済機能（Stripe / PayPal連携）',
       'データベース設計・構築',
       '管理画面開発',
+      'API開発・外部サービス連携',
       '詳細なSEO対策',
       '12ヶ月間の無料サポート',
     ],
     color: 'border-[#d4a574]',
     buttonColor: 'border border-[#d4a574] text-[#d4a574] hover:bg-[#d4a574] hover:text-black',
-    recommended: true,
   },
 ];
 

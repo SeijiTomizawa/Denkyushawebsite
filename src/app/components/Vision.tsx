@@ -6,30 +6,30 @@ export default function Vision() {
         <div className="text-center mb-32">
           <div className="divider-line mx-auto mb-12" />
           <h2 
-            className="text-5xl md:text-6xl tracking-wider mb-8 text-[#d4a574]"
+            className="text-5xl md:text-6xl tracking-wider mb-8 text-[#e8c292]"
             style={{ 
               fontFamily: "'Noto Serif JP', serif", 
               fontWeight: 300,
-              textShadow: '0 0 30px rgba(212, 165, 116, 0.5), 0 0 60px rgba(212, 165, 116, 0.2)'
+              textShadow: '0 0 30px rgba(232, 194, 146, 0.6), 0 0 60px rgba(232, 194, 146, 0.3)'
             }}
           >
             ヘッドレスWordPress
           </h2>
           <p 
-            className="text-sm text-[#d4a574] opacity-70 tracking-wider mb-16"
+            className="text-sm text-[#e8c292] opacity-80 tracking-wider mb-16"
             style={{ 
               fontFamily: "'Cormorant Garamond', serif", 
               fontWeight: 300,
-              textShadow: '0 0 10px rgba(212, 165, 116, 0.3)'
+              textShadow: '0 0 10px rgba(232, 194, 146, 0.4)'
             }}
           >
             Headless WordPress
           </p>
           <p 
-            className="text-base md:text-lg text-[#9a9a9a] opacity-60 leading-loose tracking-wide max-w-2xl mx-auto"
+            className="text-base md:text-lg text-[#b8b8b8] opacity-70 leading-loose tracking-wide max-w-2xl mx-auto"
             style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
           >
-            WordPressをご利用中のお客様へ、より安全で高速なWEBサイト��提供します
+            WordPressをご利用中のお客様へ、より安全で高速なWEBサイトをご提案
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export default function Vision() {
         <div className="space-y-20 mb-32">
           <div className="text-center">
             <div 
-              className="text-xs tracking-[0.3em] text-[#d4a574] opacity-40 mb-6 uppercase"
+              className="text-xs tracking-[0.3em] text-[#e8c292] opacity-50 mb-6 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               01
@@ -49,18 +49,18 @@ export default function Vision() {
               セキュリティの向上
             </h3>
             <p 
-              className="text-base text-[#9a9a9a] opacity-60 leading-loose max-w-lg mx-auto"
+              className="text-base text-[#b8b8b8] opacity-70 leading-loose max-w-lg mx-auto"
               style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
             >
               フロントエンドとバックエンドを分離し、攻撃対象を最小化
             </p>
           </div>
 
-          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent mx-auto" />
+          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#e8c292]/20 to-transparent mx-auto" />
 
           <div className="text-center">
             <div 
-              className="text-xs tracking-[0.3em] text-[#d4a574] opacity-40 mb-6 uppercase"
+              className="text-xs tracking-[0.3em] text-[#e8c292] opacity-50 mb-6 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               02
@@ -72,18 +72,18 @@ export default function Vision() {
               パフォーマンスの向上
             </h3>
             <p 
-              className="text-base text-[#9a9a9a] opacity-60 leading-loose max-w-lg mx-auto"
+              className="text-base text-[#b8b8b8] opacity-70 leading-loose max-w-lg mx-auto"
               style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
             >
               React + 静的生成により、超高速なページ表示を実現
             </p>
           </div>
 
-          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4a574]/20 to-transparent mx-auto" />
+          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#e8c292]/20 to-transparent mx-auto" />
 
           <div className="text-center">
             <div 
-              className="text-xs tracking-[0.3em] text-[#d4a574] opacity-40 mb-6 uppercase"
+              className="text-xs tracking-[0.3em] text-[#e8c292] opacity-50 mb-6 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               03
@@ -95,7 +95,7 @@ export default function Vision() {
               モダンな開発体験
             </h3>
             <p 
-              className="text-base text-[#9a9a9a] opacity-60 leading-loose max-w-lg mx-auto"
+              className="text-base text-[#b8b8b8] opacity-70 leading-loose max-w-lg mx-auto"
               style={{ fontFamily: "'Noto Serif JP', serif", fontWeight: 300 }}
             >
               最新のReact技術を活用した柔軟なUI/UX設計が可能
@@ -115,25 +115,25 @@ export default function Vision() {
           
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               React
             </span>
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Next.js
             </span>
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               TypeScript
             </span>
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               WordPress
@@ -142,25 +142,25 @@ export default function Vision() {
 
           <div className="flex flex-wrap justify-center gap-6">
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               microCMS
             </span>
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Laravel
             </span>
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Vercel
             </span>
             <span 
-              className="text-xs tracking-[0.2em] text-[#d4a574] opacity-60 uppercase"
+              className="text-xs tracking-[0.2em] text-[#e8c292] opacity-70 uppercase"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Firebase

@@ -75,17 +75,6 @@ export default function Header() {
           {/* Desktop Navigation - minimal */}
           <div className="hidden lg:flex items-center gap-12">
             <Link 
-              to="/service" 
-              className="text-sm tracking-[0.2em] text-[#d4a574] opacity-80 hover:opacity-100 transition-all duration-500 uppercase"
-              style={{ 
-                fontFamily: "'Cormorant Garamond', serif", 
-                fontWeight: 300,
-                textShadow: '0 0 10px rgba(212, 165, 116, 0.2)'
-              }}
-            >
-              Service
-            </Link>
-            <Link 
               to="/create" 
               className="text-sm tracking-[0.2em] text-[#d4a574] opacity-80 hover:opacity-100 transition-all duration-500 uppercase"
               style={{ 
@@ -227,13 +216,6 @@ export default function Header() {
             }}
           >
             <div className="p-4 space-y-2">
-              <button
-                onClick={() => handleMobileNavigation('/service')}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors font-medium"
-              >
-                SERVICE
-              </button>
-              
               <button
                 onClick={() => handleMobileNavigation('/create')}
                 className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors font-medium"
